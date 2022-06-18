@@ -1,0 +1,46 @@
+% 编译器选择XeLaTex，文献工具选择Biber，文献导入格式选择BibTex
+% 图、表标题使用自定义\ftname命令代替系统\caption命令
+% 图、表、公式、章节引用统一使用\cref
+
+%\documentclass的[]内不能有空行
+\documentclass[
+   %草稿模式
+%draft,
+   %输出格式，打印版（print），电子版（electronic），ppt，默认为electronic
+   %print会插入空白页以便直接双面打印
+   %ppt会省略图表编号，方便制作PPT时截图
+%output=ppt,
+output=electronic,
+%output=print,
+   %是否隐藏作者信息，用于外审，默认为false
+%review=true,
+%include-spine=true,
+%statement-file=原创声明.pdf,
+%license-file=授权协议.pdf,
+%forlib=true
+]{WHUPhd}
+
+\bibliography{ref/refs}%参考文献路径
+\makenomenclature%生成缩略词
+
+\include{data/whusetup}%论文参数设置
+
+
+\begin{document}
+	
+\include{includefile/frontmatter} %无页码部分   
+\include{includefile/midmatter}   %罗马数字页码部分
+	
+%正文
+%如果需要在打印模式下，每章从奇数页开始，就取消下面注释
+%\let\cleardoublepage\clearpage
+\mainmatter
+\baselineskip=20pt  %正文行距为20磅
+\include{data/chap01}
+\include{data/chap02} 
+\include{data/chap03}
+\include{data/chap04}
+	
+\backmatter
+\include{includefile/backmatter} %参考文献、致谢、作品列表
+\end{document}

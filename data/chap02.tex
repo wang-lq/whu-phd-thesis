@@ -1,0 +1,206 @@
+\chapter{杂七杂八的话}
+
+\section{Readme}
+
+模板文件的结构, 如下表所示:
+ \begin{table}[ht]\centering
+\begin{tabular}{r|r|l}
+\hline\hline
+  \multicolumn{2}{c|}{PHDTemplate.tex }  &  主文档，在其中设置编译选项与增减包含的章节文件\\\hline
+  \multicolumn{2}{c|}{WHUPhd.cls} &  定义文档格式的 class file\\\hline
+                          &frontmatter.tex&  无页码部分 \\\cline{2-3}
+  includefile 文件夹  & midmatter.tex  &  罗马数字页码部分  \\\cline{2-3}
+                            & backmatter.tex &  参考文献、致谢、作品列表  \\\hline
+                            &whusetup.tex&  题目与作者等等信息 \\\cline{2-3}
+                            &innovations.tex&  创新点 \\\cline{2-3}
+                            &cnabstract.tex&  中文摘要 \\\cline{2-3}
+  data 文件夹  & enabstract.tex  &  英文摘要  \\\cline{2-3}
+  &nomenclature.tex&  缩略词 \\\cline{2-3}
+  &achievements.tex&  成果列表 \\\cline{2-3}
+                            & thanks.tex &  致谢  \\\hline
+  %\multicolumn{2}{c|}{Adobe fonts 文件夹}  &  Adobe 字体文件, 需自行安装.\\\hline
+  \multicolumn{2}{c|}{figures 文件夹} &  存放图片文件\\\hline
+  \multicolumn{2}{c|}{ref/refs.bib 文件} &   参考文献列表\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+%  \footnotetext[1]{定制这个参考文献格式, 主要是希望尽可能满足武汉大学硕士论文的相应格式要求, 比如要求将~article 的``年份''写在``卷号''之前.
+%                   存在的问题是: 无法将~book 的``出版时间''标在``出版单位''之前. 事实上, 这个要求有悖于``国家标准~7714-87 文后参考文献著录规则''.
+%                   作者名的写法, 依照了``文后参考文献著录规则'', 比如~Albert Einstein 写为~Einstein A.}
+%  \footnotetext[1]{编译信息文件常常让我们的文件夹变得凌乱不堪, WinEdt窗口的``垃圾箱''按钮(Erase Output Files),
+%     可以让我们方便地删除这些``垃圾''文件. 这也减少了误删文件的可能.}
+
+无需也不要改变、移动上述文档的位置.
+
+可能这里的文档看上去有点多. 如果不习惯用~\verb|\include{ }|~的方式加入``子文档'', 当然可以把它们合并在主文档, 成为一个文档.
+({\kaishu 但是这样并不会给我们带来方便.})
+
+%利用~WinEdt~的~Project tree, 可以方便地管理这些文件:
+%\begin{itemize}
+%    \item 点击~WinEdt~窗口的~Project Tree~按键;
+%    \item 再点击~WinEdt~窗口的~Set Main File~按键;
+%\end{itemize}
+%接下来的管理, 已经清楚地展示在跳出的窗口中了. 再去处理其他的文件时, 还要点击~WinEdt 窗口的~Remove Main File~按键.
+
+
+英文封面页加了校徽, 有黑白、彩色两种备选, 都是矢量图形, 放大不会失真. 图片文件很小,
+用~MetaPost~生成的(准确的说, 是最后一道工序用到了~MetaPost), 过程有点复杂.
+
+本模板首次完成于 2005 年. 历经数次改版. 只记录近期的更新:
+
+%2013 年 12 月更新: 文件夹下放了一个 ntheorem.sty. 是因为有用户遇到了不能编译的问题, 其原因就是需要更新 ntheorem.sty.
+%若你知道更新的方法, 感觉这个碍眼, 可以把这个文件去掉. 不知道更新的方法, 就这样放在这里吧.
+
+2014 年 05 月更新: (1) 从中文摘要开始加上页眉. (2) 之前的声明改为``论文原创性声明创'', 内容有改动.
+(3) ``学位论文使用授权协议书''内容有改动.
+
+%但是, 研究生院给出的 2014 年的博士论文格式规定, 有多处疏漏和错误, 2015 年应该还有改动.
+
+2015 年 11 月更新: 改造为适应 TeX Live 2015 软件环境.
+
+2016 年 04 月更新: 研究生院公布新的要求. 按此要求修改了封面、论文原创性声明、学位论文使用授权书.
+
+\section{字体调节}
+
+\begin{tabular}{ll}
+ \verb|\songti| & {\songti 宋体} \\
+ \verb|\heiti| & {\heiti 黑体} \\
+ \verb|\fangsong| & {\fangsong 仿宋} \\
+ \verb|\kaishu| & {\kaishu 楷书} \\
+\end{tabular}
+
+
+\section{字号调节}
+字号命令: \verb|\zihao|
+
+使用 \verb|\zihao| 命令调整字体大小时, 西文字号大小会始终和中文字号保持一致.
+
+\begin{tabular}{ll}
+\verb|\zihao{0}| &\zihao{0}  初号字 English \\
+\verb|\zihao{-0}|&\zihao{-0} 小初号 English \\
+\verb|\zihao{1} |&\zihao{1}  一号字 English \\
+\verb|\zihao{-1}|&\zihao{-1} 小一号 English \\
+\verb|\zihao{2} |&\zihao{2}  二号字 English \\
+\verb|\zihao{-2}|&\zihao{-2} 小二号 English \\
+\verb|\zihao{3} |&\zihao{3}  三号字 English \\
+\verb|\zihao{-3}|&\zihao{-3} 小三号 English  \\
+\verb|\zihao{4} |&\zihao{4}  四号字 English  \\
+\verb|\zihao{-4}|&\zihao{-4} 小四号 English \\
+\verb|\zihao{5} |&\zihao{5}  五号字 English \\
+\verb|\zihao{-5}|&\zihao{-5} 小五号 English \\
+\verb|\zihao{6} |&\zihao{6}  六号字 English \\
+\verb|\zihao{-6}|&\zihao{-6} 小六号 English \\
+\verb|\zihao{7} |&\zihao{7}  七号字 English \\
+\verb|\zihao{8} |&\zihao{8}  八号字 English \\
+\end{tabular}
+
+按研究生院要求, 本文正文使用的是{\zihao{-4}小四号}.
+
+\section{标点符号的问题}
+
+建议使用半角的标点符号, 后边再键入一个空格. 特别是在英文书写中要注意此问题!
+
+使用半角也有不足的地方, 比如顿号出不来, 需要临时切换到全角. (当然也有输入法不需要切换, 比如紫光拼音, 可以直接用拼音输入逗号.)
+
+双引号是由两个左单引号、两个右单引号构成的: \verb|``  ''|. 左单引号在键盘上数字~1 的左边.
+
+但是, 无论您偏向于全角或半角, 强烈建议您使用实心的句号, 只要您书写的是自然科学的文章.
+原因可能是因为, 比如使用全角句号的句子结尾处的``$x$。''容易误为数学式~$x_0$(\verb|$x_0$|)吧.
+
+\section{中英文间距问题}
+
+使用 XeLaTex 编译将自动加入间距. 不再需要在公式、英文前后加字符``\verb|~|''或空格.
+
+\section{引用的问题}
+
+
+\subsection{参考文献的引用}
+ 使用\verb|\cite{}|引用参考文献, 得到形如 [3-7] 的样式\cite{AutowareFoundationOpen};\verb|\citeA{}|得到形如 作者（年份） 的样式，如\citeA{bogoslavskyiEfficientOnlineSegmentation2017}提出了XX方法.大括号内要填入由ref/refs.bib 文件提供的字符串.
+
+\subsection{定理和公式的引用}
+引用图、表、章节、公式等时，使用\verb|\cref{}|自动生成编号前缀.
+
+\begin{theorem}[谁发现的]\label{th-abcd}
+最大的正整数是~$1$.
+\end{theorem}
+
+\begin{proof}
+要找到这个最大的正整数, 我们设最大的正整数为~$x$, 则~$x \geqslant 1$, 两边同时乘以~$x$, 得到
+\begin{equation}\label{eq-abc}
+x^2 \geqslant x.
+\end{equation}
+而~$x$ 是最大的正整数, 由~\cref{eq-abc} 得到\footnote{超级链接会出现红色或者绿色的方框, 例如这里的~\cref{eq-abc} , 这些方框只会在 pdf 电子文档中出现. 打印时, 不会出现该方框.}
+\[
+x^2 = x.
+\]
+所以
+\begin{equation*}
+x = 1.
+\end{equation*}
+\end{proof}
+
+定理~\cref{th-abcd} 是一个重大的发现.
+
+定理(\ref{th-abcd}) 是一个重大的发现.
+
+%%%%----- 定义等环境的举例 --------
+\begin{definition}[整数]
+ 正整数(例如 1, 2, 3)、负整数(例如 ${−1}$, $−2$, $−3$)与零(0)合起来统称为{\heiti 整数}.
+\end{definition}
+
+\begin{remark}
+  整数集合在数学上通常表示为 $\mathbf{Z}$ 或 $\mathbb{Z}$, 该记号源于德语单词 Zahlen(意为`` 数'')的首字母.
+\end{remark}
+
+\begin{proposition}
+任意两个整数相加、相减、相乘的结果, 仍然是整数.
+\end{proposition}
+
+\begin{example}
+  $1+2=3$.
+\end{example}
+
+\begin{corollary}
+   在整数集合内, 相加、相减、相乘运算是封闭的.
+\end{corollary}
+
+\section{图形与表格}
+
+支持 eps, pdf, jpg 等常见图形格式.
+
+再次澄清一个误会: \LaTeX{} 支持的图形格式绝非 eps 这一种. 无需特意把图片转化为 eps 格式.
+
+用形如 \verb|\includegraphics[width=12cm]{Daisy.jpg}| 的命令可以纳入图片.
+
+如\cref{fig:1} 是一个纳入~jpg 图片的例子.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=0.7\textwidth]{Daisy.jpg}
+  \ftname{一个彩色 jpg 图片的例子}
+  \label{fig:1}
+\end{figure}
+
+表格问题, 建议使用``三线表'', 如\cref{tab:1}.
+
+表格制作网站: \url{https://www.tablesgenerator.com/latex_tables},方便将表格转化为latex命令.
+
+\begin{table}[ht]
+\centering
+\ftname{一般三线表}
+\label{tab:1}
+    \begin{tabular}{c c c c c c c c c c c}
+    \hline
+    123 & 4  & 5  & 123 & 4 & 5123 & 4 & 5 & 123 & 4 & 5\\
+    \hline
+    67 & 890 & 13 & 123 & 4 & 5123 & 4 & 5 & 123 & 4 & 5\\
+    67 & 890 & 13 & 123 & 4 & 5123 & 4 & 5 & 123 & 4 & 5\\
+    67 & 890 & 13 & 123 & 4 & 5123 & 4 & 5 & 123 & 4 & 5\\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+
+%%%%==========================================================%%%

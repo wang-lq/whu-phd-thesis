@@ -1,0 +1,20 @@
+\pagenumbering{Roman} %正文之前的页码用大写罗马字母编号.
+\pagestyle{fancy} \fancyfancy
+
+\input{data/cnabstract}%中文摘要 
+\input{data/enabstract}%英文摘要 
+
+%目录
+\pdfbookmark[0]{目录}{toc} %目录加入到书签
+\tableofcontents\cleardoublepage
+
+%图表目录
+%\listoffig\cleardoublepage
+%\listoftab\cleardoublepage
+\listoffigandtab\cleardoublepage
+
+%缩略词
+\input{data/nomenclature}
+\phantomsection
+\addcontentsline{toc}{chapter}{\listnomname}
+\printnomenclature[2.7cm]\cleardoublepage

@@ -1,0 +1,16 @@
+%中文封面、英文封面、郑重声明、授权协议书、创新点
+
+\pdfbookmark[0]{封面}{title} %添加pdf书签
+\maketitle
+\makeentitle
+
+{
+\pagestyle{empty}
+\statement%郑重声明
+\protocol%授权协议书
+}
+
+\input{data/innovations}%创新点
+\checkdoublepage
+
+\frontmatter

@@ -1,0 +1,14 @@
+*.aux
+PhdTemplate.bbl
+PhdTemplate.bcf
+PhdTemplate.blg
+PhdTemplate.lof
+*.log
+PhdTemplate.lot
+PhdTemplate.nlo
+PhdTemplate.out
+PhdTemplate.run.xml
+PhdTemplate.synctex.gz
+PhdTemplate.thm
+PhdTemplate.toc
+PhdTemplate.pdf
