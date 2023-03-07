@@ -1,9 +1,9 @@
 % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{WHUPhd}[2015/11/07 4.0 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
+\ProvidesClass{WHUThesis}[2015/11/07 4.0 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
 
 \newcommand\whu@warning[1]{%
-	\ClassWarning{WHUPhd}{#1}%
+	\ClassWarning{WHUThesis}{#1}%
 }
 
 \RequirePackage{kvdefinekeys}

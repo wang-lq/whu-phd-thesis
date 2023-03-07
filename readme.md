@@ -8,7 +8,7 @@
 
 |  PhdTemplate.tex   | 主文档，在其中设置编译选项与增减包含的章节文件 |
 |:------------------:|-------------------------------------------------|
-|     WHUPhd.cls     | 定义文档格式的 class file            |
+|     WHUThesis.cls     | 定义文档格式的 class file            |
 |includefile/frontmatter.tex | 无页码部分                                      |
 |includefile/midmatter.tex | 罗马数字页码部分                                |
 |includefile/backmatter.tex | 参考文献、致谢、作品列表                      |
