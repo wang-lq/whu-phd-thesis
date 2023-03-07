@@ -100,6 +100,10 @@
 	author* = {
 		name    = author@en,
 	},
+	number,
+	number* = {
+		name    = number@en,
+	},
 	supervisor,
 	supervisor* = {
 		name    = supervisor@en,
@@ -191,12 +195,12 @@ xetex]{geometry}    % 页面设置%
 
 \let\ps@oldplain\ps@plain
  \fancyhf{}  %清除以前对页眉页脚的设置
- \fancyhead[CE]{\zihao{5} 武汉大学博士学位论文} %偶数页页眉居中位置的设置. 不填则为空.
+ \fancyhead[CE]{\zihao{5} 武汉大学硕士学位论文} %偶数页页眉居中位置的设置. 不填则为空.
  \fancyhead[CO]{\zihao{5} \whu@title}    %L,C,R 是左中右; O,E 是奇偶. 可以自己组合调整.
  \fancyfoot[C]{-\,\thepage\,-}                     %页面下侧的设置. 大括号内置空, 表示什么也不填. 反之, 没有此命令的话, 会在页脚出现页码
  \newcommand{\fancyfancy}{\fancypagestyle{plain}{%
   \fancyhf{}
-   \fancyhead[CE]{\zihao{5} 武汉大学博士学位论文}                       %偶数页页眉居中位置的设置. 不填则为空.
+   \fancyhead[CE]{\zihao{5} 武汉大学硕士学位论文}                       %偶数页页眉居中位置的设置. 不填则为空.
  \fancyhead[CO]{\zihao{5} \whu@title}    %L,C,R 是左中右; O,E 是奇偶. 可以自己组合调整.
  \fancyfoot[C]{-\,\thepage\,-} }}
 %%%=== 封面 ===%%%
@@ -217,7 +221,7 @@ xetex]{geometry}    % 页面设置%
     \vspace*{15mm} %插入空白
     {\songti \zihao{2} \ziju{1} %武汉大学 
     \includegraphics[width=0.4\textwidth]{wudaname.eps}
-    \\[3mm]  博士学位论文}\\
+    \\[3mm] 硕士学位论文}\\
     \vspace{2cm}
     {\kaishu \zihao{1}  \whu@title \par}%
 %    \vspace{4cm}
@@ -226,28 +230,28 @@ xetex]{geometry}    % 页面设置%
     \begin{tabular}{cp{7.7cm}c}
 \ifwhu@review@false
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@author}\hfill{}} & \\[3ex]
-\raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti
-	{}\raisebox{-3ex}[0pt]{\whu@supervisor}\hfill{}} & \\[3ex] % \cline{2-2}
+	  \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@number}\hfill{}} & \\[3ex]
+\raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti{}\raisebox{-3ex}[0pt]{\whu@supervisor}\hfill{}} & 	\\[3ex] % \cline{2-2}
+
 \ifx\whu@second@supervisor\@empty\else
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{}} & {\songti
-      {}\raisebox{-3ex}[0pt]{\whu@second@supervisor}\hfill{}} & \\[3ex]
+    & {\songti {}\raisebox{-3ex}[0pt]{\whu@second@supervisor}\hfill{}} & \\[3ex]
 \fi
 \ifx\whu@third@supervisor\@empty\else
-\raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{}} & {\songti
-	{}\raisebox{-3ex}[0pt]{\whu@third@supervisor}\hfill{}} & \\[3ex]
+	& {\songti {}\raisebox{-3ex}[0pt]{\whu@third@supervisor}\hfill{}} & \\[3ex]
 \fi
+
 \else
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex]
-\raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti
-	{}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex] % \cline{2-2}
+	  \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex]
+\raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti	{}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex] % \cline{2-2}
 \fi
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 科、\hfill 专\hfill 业\hfill 名\hfill 称: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@major}\hfill{}} &
+      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{专\hfill 业\hfill 名\hfill 称: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@major}\hfill{}} &
       \\[3ex]
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 方\hfill 向: }} & {\songti{}\raisebox{-3ex}[0pt]{\whu@speciality}\hfill{}} & \\[3ex]
      \end{tabular}
     }
     \par
-    \vspace{25mm}
+    \vspace{20mm}
     {
 %    {\heiti \zihao{3} \the\year~年 ~\the\month~月 ~\the\day~日 \par}%
     {\heiti \zihao{3} \whu@date \par}%
@@ -264,40 +268,48 @@ xetex]{geometry}    % 页面设置%
   \null
   \thispagestyle{empty}
   \renewcommand{\baselinestretch}{1.5}  %下文的行距
-  \vspace*{1.5cm}
+  \vspace*{0.5cm}
   
-  \begin{center}{
-  \zihao{2}  Ph.D. Dissertation of Wuhan University \par}\end{center}
-  \vspace*{3cm}
-  \begin{center}{ \zihao{2}
-  \whu@title@en \par}\end{center}
+  \begin{center}{\zihao{2} \whu@title@en \par}\end{center}
   
-  \vspace*{1cm}
-  \begin{center}{\zihao{4} By \\
-   \ifwhu@review@false 
-   \whu@author@en \\
-   \fi
-   \vspace*{2cm}
-   \textit{Supervised by} \\ 
-   \ifwhu@review@false 
-   \whu@supervisor@en \\
-   \ifx\whu@second@supervisor\@empty\else
-   \whu@second@supervisor@en
-   \fi \\
-   \ifx\whu@third@supervisor\@empty\else
-   \whu@third@supervisor@en
-   \fi
-   \fi
-  }\end{center}
   \vfill
+  
+  \begin{center}
+  \zihao{4}
+  \begin{tabular}{ r l }
+   Candidate:      & {\sc \ifwhu@review@false  \whu@author@en \fi}      \\
+   Student Number: & {\whu@number@en} \\
+   Supervisor:     & {\sc \whu@supervisor@en}   \\
+   \ifx \whu@second@supervisor@en\@empty \else & {\sc \whu@second@supervisor@en} \fi \\ 
+   \ifx \whu@third@supervisor@en\@empty \else & {\sc \whu@third@supervisor@en} \fi \\ 
+   Major:          & \whu@major@en  \\
+   Speciality:     & \whu@speciality@en 
+  \end{tabular}
+  
+%   \vspace*{2cm}
+  \vfill
+  \begin{center}
+	% \iflib % 向图书馆提交电子文档, 使用黑白校徽.
+	% \includegraphics[height=4cm]{whu.eps}       %%  黑白的. 很小, 只有 10k.
+	% \else
+	\ifwhu@output@print % 文档打印, 使用黑白校徽.
+	\includegraphics[height=4cm]{whu.eps}       %%  黑白的.
+	\else
+	\includegraphics[height=4cm]{whulogo.eps} %%  彩色的.
+	\fi
+  \end{center}
+  
+  
   \begin{center} 	
-  	\zihao{4}
-  	\whu@school@name \\
-  	{Wuhan University} \\
-  	\whu@date@en
+	\zihao{4}
+	\whu@school@name \\
+	{\sc Wuhan University} \\
+	\whu@date@en
   \end{center}
   \checkdoublepage
-  }
+  
+  \end{center}
+}
 
 %------------------------ Abstract & Keywords -------------------------
 \newcommand\cnabstractname{摘要}
@@ -603,7 +615,7 @@ xetex]{geometry}    % 页面设置%
 }
 \NewDocumentCommand{\spine}{
 	O{
-		武汉大学博士学位论文\qquad
+		武汉大学硕士学位论文\qquad
 	}
 	O{
 		\whu@title\qquad\qquad
