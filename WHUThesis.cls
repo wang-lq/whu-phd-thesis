@@ -231,7 +231,7 @@ xetex]{geometry}    % 页面设置%
 %    \vspace{4cm}
      \vfill\vfill\vfill
     {\songti\zihao{4}
-    \begin{tabular}{cp{7.7cm}c}
+    \begin{tabular}{ccc}
 \ifwhu@review@false
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@author}\hfill{}} & \\[3ex]
 	  \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@number}\hfill{}} & \\[3ex]
