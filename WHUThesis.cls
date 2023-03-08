@@ -282,10 +282,12 @@ xetex]{geometry}    % 页面设置%
   \zihao{4}
   \begin{tabular}{ r l }
    Candidate:      & {\sc \ifwhu@review@false  \whu@author@en \fi}      \\
-   Student Number: & {\whu@number@en} \\
-   Supervisor:     & {\sc \whu@supervisor@en}   \\
-   \ifx \whu@second@supervisor@en\@empty \else & {\sc \whu@second@supervisor@en} \fi \\ 
-   \ifx \whu@third@supervisor@en\@empty \else & {\sc \whu@third@supervisor@en} \fi \\ 
+   Student Number: & {\ifwhu@review@false \whu@number@en \fi} \\
+   \ifwhu@review@true Supervisor: & \\ \else 
+	Supervisor:     & {\sc \whu@supervisor@en}   \\
+	\ifx \whu@second@supervisor@en\@empty \else & {\sc \whu@second@supervisor@en} \fi \\ 
+	\ifx \whu@third@supervisor@en\@empty \else & {\sc \whu@third@supervisor@en} \fi \\ 
+   \fi
    Major:          & \whu@major@en  \\
    Speciality:     & \whu@speciality@en 
   \end{tabular}
