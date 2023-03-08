@@ -4,19 +4,20 @@
 
 %\documentclass的[]内不能有空行
 \documentclass[
-   %草稿模式
+%草稿模式
 %draft,
-   %输出格式，打印版（print），电子版（electronic），ppt，默认为electronic
-   %print会插入空白页以便直接双面打印
-   %ppt会省略图表编号，方便制作PPT时截图
+%输出格式，打印版（print），电子版（electronic），ppt，默认为electronic
+%print会插入空白页以便直接双面打印
+%ppt会省略图表编号，方便制作PPT时截图
 %output=ppt,
 output=electronic,
 %output=print,
-   %是否隐藏作者信息，用于外审，默认为false
+%是否隐藏作者信息，用于外审，默认为false
 %review=true,
 %include-spine=true,
-%statement-file=原创声明.pdf,
-license-file=学位论文使用授权书-请重新编辑.pdf,
+%statement-file=attachment-pdf/原创声明.pdf,
+% license-file=attachment-pdf/学位论文使用授权书-请重新编辑.pdf,
+license-file=,
 %forlib=true
 ]{WHUThesis}
 
@@ -45,5 +46,5 @@ license-file=学位论文使用授权书-请重新编辑.pdf,
 \include{includefile/backmatter} %参考文献、致谢、作品列表
 
  %最新提交要求，将签完字的《武汉大学学位论文使用授权协议书》扫描放到最后
-\includepdf{授权协议.pdf} %扫描版授权协议
+\includepdf{attachment-pdf/授权协议.pdf} %扫描版授权协议
 \end{document}

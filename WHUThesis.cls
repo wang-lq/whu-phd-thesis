@@ -379,7 +379,7 @@ xetex]{geometry}    % 页面设置%
 \RequirePackage{float}
 \RequirePackage{graphbox}
 \RequirePackage{textcomp,gensymb} %支持°
-\RequirePackage[backend=biber,style=gb7714-2015,gbpub=false,isbn=false,doi=true,gbtitlelink=true,url=true,sortlocale=zh__pinyin]{biblatex}  % 参考文献引用, 使用biblatex包
+\RequirePackage[backend=biber,style=ref-style/gb7714-2015,gbpub=false,isbn=false,doi=true,gbtitlelink=true,url=true,sortlocale=zh__pinyin]{biblatex}  % 参考文献引用, 使用biblatex包
 \RequirePackage[ruled,linesnumbered]{algorithm2e} %伪代码
 %\RequirePackage{setspace}
 \RequirePackage{url}
