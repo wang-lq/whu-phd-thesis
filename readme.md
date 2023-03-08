@@ -1,30 +1,34 @@
-# 武汉大学博士论文LaTeX模板
-本模版在[武大GNSS中心常乐的模版](http://172.20.99.0:3000/cl/PhdTemplate)的基础上，按照2022年的论文格式/提交要求，做了部分格式修改和文件的增删。
+# 武汉大学硕士论文LaTeX模板
+本模板在[rhjin](https://gitee.com/rhjin)修改的[武汉大学博士论文Latex模板](https://gitee.com/rhjin/PhdTemplate)基础上修改，修改为硕士论文的要求。
 每年的论文提交要求可能略有变化，或者有一些模糊的地方，请在提交前与教学秘书再次确认。
 
+本模版在[武大GNSS中心常乐的模版](http://172.20.99.0:3000/cl/PhdTemplate)的基础上，按照2022年的论文格式/提交要求，做了部分格式修改和文件的增删。
 
 ## 主要文件列表：
 
 
-|  PhdTemplate.tex   | 主文档，在其中设置编译选项与增减包含的章节文件 |
+|  MasterThesis.tex   | 主文档，在其中设置编译选项与增减包含的章节文件 |
 |:------------------:|-------------------------------------------------|
-|     WHUThesis.cls     | 定义文档格式的 class file            |
-|includefile/frontmatter.tex | 无页码部分                                      |
-|includefile/midmatter.tex | 罗马数字页码部分                                |
-|includefile/backmatter.tex | 参考文献、致谢、作品列表                      |
-|data/whusetup.tex | 题目与作者等等信息                              |
-|data/innovations.tex | 创新点                                          |
+|     WHUThesis.cls     | 定义硕士论文文档格式的 class file，包含中英文主页的具体定义格式  |
+|includefile/frontmatter.tex | 无页码部分，包含中英文主页声明，论文“郑重声明”和"授权协议”  |
+|includefile/midmatter.tex | 罗马数字页码部分，中英文摘要，目录，图表目录，缩略词                               |
+|includefile/backmatter.tex | 参考文献、致谢、攻硕期间成果  |
+|data/whusetup.tex | 封面信息，题目、作者、指导老师、专业等等信息  |
+|data/innovations.tex | 创新点(硕士不需要，下一版删掉)           |
 |data/cnabstract.tex | 中文摘要                                        |
 |data/enabstract.tex | 英文摘要                                        |
 |data/nomenclature.tex | 缩略词                                          |
-|data/achievements.tex | 成果列表                                        |
+|data/achievements.tex | 攻硕期间成果列表                                        |
 |data/thanks.tex | 致谢                                            |
-|figures文件夹   | 存放图片文件                                  |
 |ref/refs.bib|      参考文献列表                                   |
+|figures/   | 存放图片文件                                  |
+|attachment-pdf| 附件pdf，包括授权协议，授权书和原创声明 |
+|ref-style   | 参考文件引用格式                                 |
+|Fonts  | 存放字体文件                                  |
 
 请特别注意：
 - 源文件里的注释说明，主要包含了编译配置选项、命令；
-- 源文件正文(或编译出来的PhdTemplate_bak.pdf)，给出了论文撰写格式说明
+- 源文件正文(或编译出来的 MasterThesis_backup.pdf)，给出了论文撰写格式说明
 
 ## 编译环境
 
@@ -32,6 +36,7 @@
 - 默认编译器选择XeLaTex(编译中文);
 - 默认文献工具选择Biber(否则可能出现引用格式错误)。
 
+也可以使用texlive + vscode，需要安装插件Latex Workshop
 
 ## Linux下字体缺失(Windows无需此项操作)
 
