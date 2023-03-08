@@ -63,7 +63,9 @@ sudo fc-cache -fv
 ctrl+shift + p， 打开Open User Settings (Json)
 
 添加以下内容
-```
+<details>
+<summary>展开查看</summary>
+<pre><code>
    // Latex workshop
     "latex-workshop.latex.tools": [
         {
@@ -157,8 +159,10 @@ ctrl+shift + p， 打开Open User Settings (Json)
     "*.fls",
     "*.log",
     "*.fdb_latexmk"
-    ],
-```
+    ],   
+</code></pre>
+</details>
+
 ## 字数统计
 在主文档目录运行以下命令，用于统计data文件夹中论文字数。
 ```
