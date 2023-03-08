@@ -1,0 +1,6 @@
+## Intermediate documents:
+*.pdf
+
+## Structures for building release
+*.zip
+build/*
