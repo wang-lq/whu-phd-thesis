@@ -50,7 +50,7 @@ export PATH=${PATH}:/usr/local/texlive/2022/bin/x86_64-linux
 ```
 ## Linux下字体缺失(Windows无需此项操作)
 
-1、将/Fonts文件中的四种字体拷贝到Linux中/usr/share/font目录下；
+1、将/Fonts文件中的四种字体拷贝到Linux中/usr/share/fonts目录下；
 
 2、终端进入/usr/share/font，依次执行
 ```
