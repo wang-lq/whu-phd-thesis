@@ -300,10 +300,10 @@ xetex]{geometry}    % 页面设置%
    \ifwhu@review@false 
    \whu@supervisor@en \\
    \ifx\whu@second@supervisor\@empty\else
-   \whu@second@supervisor@en
-   \fi \\
+   \whu@second@supervisor@en \\
+   \fi
    \ifx\whu@third@supervisor\@empty\else
-   \whu@third@supervisor@en
+   \whu@third@supervisor@en \\
    \fi
    \fi
   }\end{center}
