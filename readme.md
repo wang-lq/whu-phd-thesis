@@ -34,8 +34,20 @@
 - 默认编译器选择XeLaTex(编译中文);
 - 默认文献工具选择Biber(否则可能出现引用格式错误)。
 
+
 也可以使用texlive + vscode，需要安装插件Latex Workshop
 
+推荐使用较新的texlive, 比如2022，并手动安装
+- https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/
+- 安装完成后需要重启
+
+## linux需要配置环境变量
+
+```
+export MANPATH=${MANPATH}:/usr/local/texlive/2022/texmf-dist/doc/man
+export INFOPATH=${INFOPATH}:/usr/local/texlive/2022/texmf-dist/doc/info
+export PATH=${PATH}:/usr/local/texlive/2022/bin/x86_64-linux
+```
 ## Linux下字体缺失(Windows无需此项操作)
 
 1、将/Fonts文件中的四种字体拷贝到Linux中/usr/share/font目录下；
@@ -47,6 +59,109 @@ sudo mkfontdir
 sudo fc-cache -fv
 ```
 
+## vscode 编译配置
+ctrl+shift + p， 打开Open User Settings (Json)
+
+添加以下内容
+<details>
+<summary>展开查看</summary>
+<pre><code>
+   // Latex workshop
+    "latex-workshop.latex.tools": [
+        {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+        ]
+        },
+        {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+            ]
+        },          
+        {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+        ]
+        },
+        {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+        "%DOCFILE%"
+        ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+            "-l zh__pinyin",
+            "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+        "name": "xelatex",
+        "tools": [
+        "xelatex"
+                    ]
+        },
+        {
+        "name": "latexmk",
+        "tools": [
+        "latexmk"
+                    ]
+        },
+        {
+            "name": "xelatex -> biber -> xelatex*2",
+            "tools": [
+            "xelatex",
+            "biber",
+            "xelatex",
+            "xelatex"
+                        ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "browser",
+    "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk"
+    ],   
+</code></pre>
+</details>
 
 ## 字数统计
 在主文档目录运行以下命令，用于统计data文件夹中论文字数。
