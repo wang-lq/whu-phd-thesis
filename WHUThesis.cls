@@ -157,7 +157,15 @@
    	},
    	license-file={
    		name = license@file,
-   	}
+   	},
+	entitle-entype={
+		name = entitle@entype,
+		choices = {
+			false,
+			true,
+		},
+		default = true,
+	}
 }
 \ProcessKeyvalOptions*
 
@@ -268,7 +276,48 @@ xetex]{geometry}    % 页面设置%
 \checkdoublepage
 \fi
 }
+
 \def\makeentitle{ 
+\ifwhu@entitle@entype@true
+  \null
+  \thispagestyle{empty}
+  \renewcommand{\baselinestretch}{1.5}  %下文的行距
+  \vspace*{1.5cm}
+  
+  \begin{center}{
+  \zihao{2}  Master Thesis of Wuhan University \par}\end{center}
+  \vspace*{3cm}
+  \begin{center}{ \zihao{2}
+  \whu@title@en \par}\end{center}
+  
+  \vspace*{1cm}
+  \begin{center}{\zihao{4} By \\
+   \ifwhu@review@false 
+   \whu@author@en \\
+   \fi
+   \vspace*{2cm}
+   \textit{Supervised by} \\ 
+   \ifwhu@review@false 
+   \whu@supervisor@en \\
+   \ifx\whu@second@supervisor\@empty\else
+   \whu@second@supervisor@en
+   \fi \\
+   \ifx\whu@third@supervisor\@empty\else
+   \whu@third@supervisor@en
+   \fi
+   \fi
+  }\end{center}
+  \vfill
+  \begin{center} 	
+  	\zihao{4}
+  	\whu@school@name \\
+  	{Wuhan University} \\
+  	\whu@date@en
+  \end{center}
+  \checkdoublepage
+
+\else
+
   \null
   \thispagestyle{empty}
   \renewcommand{\baselinestretch}{1.5}  %下文的行距
@@ -315,7 +364,10 @@ xetex]{geometry}    % 页面设置%
   \checkdoublepage
   
   \end{center}
+
+\fi
 }
+
 
 %------------------------ Abstract & Keywords -------------------------
 \newcommand\cnabstractname{摘要}
