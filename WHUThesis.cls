@@ -1,6 +1,7 @@
 % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{WHUThesis}[2015/11/07 4.0 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
+% \ProvidesClass{WHUThesis}[2015/11/07 4.0 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
+\ProvidesClass{WHUThesis}[2023/3/8 4.1 Wuhan University Thesis Template for Master -- TeX Live 2015  version]
 
 \newcommand\whu@warning[1]{%
 	\ClassWarning{WHUThesis}{#1}%
@@ -148,12 +149,15 @@
 		},
 		default = false,
 	},
-   statement-file={
-   	name = statement@file,
-   },
-   license-file={
-   	name = license@file,
-   }
+	refstyle-file = {
+		name = refstyle@file,
+   	},
+   	statement-file={
+   		name = statement@file,
+   	},
+   	license-file={
+   		name = license@file,
+   	}
 }
 \ProcessKeyvalOptions*
 
@@ -379,7 +383,7 @@ xetex]{geometry}    % 页面设置%
 \RequirePackage{float}
 \RequirePackage{graphbox}
 \RequirePackage{textcomp,gensymb} %支持°
-\RequirePackage[backend=biber,style=ref-style/gb7714-2015,gbpub=false,isbn=false,doi=true,gbtitlelink=true,url=true,sortlocale=zh__pinyin]{biblatex}  % 参考文献引用, 使用biblatex包
+\RequirePackage[backend=biber,style=\whu@refstyle@file,gbpub=false,isbn=false,doi=true,gbtitlelink=true,url=true,sortlocale=zh__pinyin]{biblatex}  % 参考文献引用, 使用biblatex包
 \RequirePackage[ruled,linesnumbered]{algorithm2e} %伪代码
 %\RequirePackage{setspace}
 \RequirePackage{url}
