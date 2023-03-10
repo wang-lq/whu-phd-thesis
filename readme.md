@@ -62,71 +62,90 @@ sudo fc-cache -fv
 ## vscode 编译配置
 ctrl+shift + p， 打开Open User Settings (Json)
 
-添加以下内容
+添加以下内容，并在左边TEX选项->Build LaTeX project，设置编译工具为："latexmk (xelatex)" 可以一次编译完成。
 <details>
 <summary>展开查看</summary>
 <pre><code>
    // Latex workshop
-    "latex-workshop.latex.tools": [
+   "latex-workshop.latex.tools": [
         {
-        "name": "latexmk",
-        "command": "latexmk",
-        "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "%DOC%"
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "%DOC%"
         ]
         },
         {
-        "name": "xelatex",
-        "command": "xelatex",
-        "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-xelatex",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
             ]
         },          
         {
-        "name": "pdflatex",
-        "command": "pdflatex",
-        "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
         ]
         },
         {
-        "name": "bibtex",
-        "command": "bibtex",
-        "args": [
-        "%DOCFILE%"
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+            "%DOCFILE%"
         ]
         },
         {
             "name": "biber",
             "command": "biber",
             "args": [
-            "-l zh__pinyin",
+            // "-l zh__pinyin",
             "%DOCFILE%"
             ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-        "name": "xelatex",
-        "tools": [
-        "xelatex"
-                    ]
+            "name": "xelatex",
+            "tools": [
+            "xelatex"
+            ]
         },
         {
-        "name": "latexmk",
-        "tools": [
-        "latexmk"
-                    ]
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+            "latexmk"
+            ]
         },
         {
             "name": "xelatex -> biber -> xelatex*2",
@@ -135,31 +154,32 @@ ctrl+shift + p， 打开Open User Settings (Json)
             "biber",
             "xelatex",
             "xelatex"
-                        ]
+            ]
         }
     ],
     "latex-workshop.view.pdf.viewer": "browser",
     "latex-workshop.latex.clean.fileTypes": [
-    "*.aux",
-    "*.bbl",
-    "*.blg",
-    "*.idx",
-    "*.ind",
-    "*.lof",
-    "*.lot",
-    "*.out",
-    "*.toc",
-    "*.acn",
-    "*.acr",
-    "*.alg",
-    "*.glg",
-    "*.glo",
-    "*.gls",
-    "*.ist",
-    "*.fls",
-    "*.log",
-    "*.fdb_latexmk"
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
     ],   
+    // End Latex workshop
 </code></pre>
 </details>
 
