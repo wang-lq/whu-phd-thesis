@@ -231,7 +231,7 @@ xetex]{geometry}    % 页面设置%
     \vspace*{15mm} %插入空白
     {\songti \zihao{2} \ziju{1} %武汉大学 
     \includegraphics[width=0.4\textwidth]{wudaname.eps}
-    \\[3mm] 博士学位论文}\\
+    \\[3mm] {\addCJKfontfeatures*{AutoFakeBold=2.5}\bfseries 博士学位论文}}\\ % 宋体无粗体, 用伪粗体
     \vspace{2cm}
     {\kaishu \zihao{1}  \whu@title \par}%
 %    \vspace{4cm}
