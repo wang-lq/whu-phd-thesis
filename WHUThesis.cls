@@ -598,6 +598,23 @@ xetex]{geometry}    % 页面设置%
 \renewcommand{\bibfont}{\zihao{5}}%
 
 \RequirePackage{cleveref}
+% ctex把\p@chapter、\p@section等定义为带一个参数的宏(吃掉其后的\the<计数器>, 换成ctex的编号),
+% 而cleveref生成标签时写的是\csname p@#1\endcsname\csname the#1\endcsname, 参数吃到的是\csname,
+% 导致"Extra \endcsname", \cref显示为"1.2thesection". 这里让这些宏同时兼容两种写法.
+\def\whu@pfix@cs#1#2\endcsname{#1}
+\def\whu@pfix@tok#1{#1}
+\def\whu@pfix#1{%
+	\@ifundefined{CTEX@the#1}{}{%
+		\expandafter\def\csname p@#1\endcsname##1{%
+			\ifx\csname##1%
+				\expandafter\whu@pfix@cs
+			\else
+				\expandafter\whu@pfix@tok
+			\fi
+			{\csname CTEX@the#1\endcsname}}}}
+\AtBeginDocument{%
+	\@for\whu@tempa:=chapter,section,subsection,subsubsection,paragraph,subparagraph\do
+		{\expandafter\whu@pfix\expandafter{\whu@tempa}}}
 \crefname{figure}{图}{图}
 \crefname{table}{表}{表}
 \captionsetup[table]{labelsep=space}
@@ -605,6 +622,8 @@ xetex]{geometry}    % 页面设置%
 \crefname{algorithm}{算法}{算法}
 \crefname{equation}{式}{式}
 \crefname{section}{章节}{章节}
+\crefname{chapter}{第}{第}
+\creflabelformat{chapter}{#2#1章#3} % \cref引用章显示为"第一章"
 \renewcommand{\cref}[1]{\hyperref[#1]{\namecref{#1}\labelcref{#1}}}
 
 %图、表标题使用自定义\ftname
