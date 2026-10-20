@@ -5,6 +5,7 @@
 \input{data/enabstract}%英文摘要 
 
 %目录
+\cleardoublepage
 \pdfbookmark[0]{目录}{toc} %目录加入到书签
 \tableofcontents\cleardoublepage
 
@@ -13,8 +14,7 @@
 %\listoftab\cleardoublepage
 \listoffigandtab\cleardoublepage
 
-%缩略词
+%缩略词（规定的目录项不含缩略词，只加书签不进目录）
 \input{data/nomenclature}
-\phantomsection
-\addcontentsline{toc}{chapter}{\listnomname}
+\pdfbookmark[0]{\listnomname}{nomenclature}
 \printnomenclature[2.7cm]\cleardoublepage

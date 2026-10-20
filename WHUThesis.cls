@@ -572,16 +572,20 @@ xetex]{geometry}    % 页面设置%
 }
 \makeatletter
 
+% 规定的目录项不含图表目录, 只加书签不进目录
 \newcommand\listoffig{
-	\chapter[\listfigurename]{\ziju{1}\listfigurename}
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\chapter*{\ziju{1}\listfigurename}
 	\listoffigures
 }
 \newcommand\listoftab{
-	\chapter[\listtablename]{\ziju{1}\listtablename}
+	\pdfbookmark[0]{\listtablename}{lot}
+	\chapter*{\ziju{1}\listtablename}
 	\listoftables
 }
 \newcommand\listoffigandtab{
-	\chapter[图表目录]{\ziju{1}图表目录}
+	\pdfbookmark[0]{图表目录}{lofandlot}
+	\chapter*{\ziju{1}图表目录}
 	\listoffigures
 	\listoftables
 }
