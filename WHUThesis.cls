@@ -147,6 +147,7 @@
 	},
 	refstyle-file = {
 		name = refstyle@file,
+		default = ref-style/gb2015/gb7714-2015,
    	},
    	statement-file={
    		name = statement@file,
