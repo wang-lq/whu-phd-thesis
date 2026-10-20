@@ -391,6 +391,7 @@ xetex]{geometry}    % 页面设置%
 	\begin{center}{\zihao{-2}\heiti 博士生自认为的论文创新点}\end{center}
 	\par\vspace*{30pt}
 	\baselineskip=20pt
+	\setlist[enumerate]{wide} % 编号与段落首行一样缩进两字, 换行顶格
     \@afterheading}{\par}
 
 \renewcommand\thanks[1]{
