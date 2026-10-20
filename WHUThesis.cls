@@ -1,7 +1,7 @@
 % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 % \ProvidesClass{WHUThesis}[2015/11/07 4.0 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
-\ProvidesClass{WHUThesis}[2023/3/8 4.1 Wuhan University Thesis Template for Master -- TeX Live 2015  version]
+\ProvidesClass{WHUThesis}[2026/10/19 4.2 Wuhan University Thesis Template for PHD -- TeX Live 2015  version]
 
 \newcommand\whu@warning[1]{%
 	\ClassWarning{WHUThesis}{#1}%
@@ -100,10 +100,6 @@
 	author,
 	author* = {
 		name    = author@en,
-	},
-	number,
-	number* = {
-		name    = number@en,
 	},
 	supervisor,
 	supervisor* = {
@@ -207,12 +203,12 @@ xetex]{geometry}    % 页面设置%
 
 \let\ps@oldplain\ps@plain
  \fancyhf{}  %清除以前对页眉页脚的设置
- \fancyhead[CE]{\zihao{5} 武汉大学硕士学位论文} %偶数页页眉居中位置的设置. 不填则为空.
+ \fancyhead[CE]{\zihao{5} 武汉大学博士学位论文} %偶数页页眉居中位置的设置. 不填则为空.
  \fancyhead[CO]{\zihao{5} \whu@title}    %L,C,R 是左中右; O,E 是奇偶. 可以自己组合调整.
  \fancyfoot[C]{-\,\thepage\,-}                     %页面下侧的设置. 大括号内置空, 表示什么也不填. 反之, 没有此命令的话, 会在页脚出现页码
  \newcommand{\fancyfancy}{\fancypagestyle{plain}{%
   \fancyhf{}
-   \fancyhead[CE]{\zihao{5} 武汉大学硕士学位论文}                       %偶数页页眉居中位置的设置. 不填则为空.
+   \fancyhead[CE]{\zihao{5} 武汉大学博士学位论文}                       %偶数页页眉居中位置的设置. 不填则为空.
  \fancyhead[CO]{\zihao{5} \whu@title}    %L,C,R 是左中右; O,E 是奇偶. 可以自己组合调整.
  \fancyfoot[C]{-\,\thepage\,-} }}
 %%%=== 封面 ===%%%
@@ -233,7 +229,7 @@ xetex]{geometry}    % 页面设置%
     \vspace*{15mm} %插入空白
     {\songti \zihao{2} \ziju{1} %武汉大学 
     \includegraphics[width=0.4\textwidth]{wudaname.eps}
-    \\[3mm] 硕士学位论文}\\
+    \\[3mm] 博士学位论文}\\
     \vspace{2cm}
     {\kaishu \zihao{1}  \whu@title \par}%
 %    \vspace{4cm}
@@ -242,7 +238,6 @@ xetex]{geometry}    % 页面设置%
     \begin{tabular}{ccc}
 \ifwhu@review@false
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@author}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@number}\hfill{}} & \\[3ex]
 \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti{}\raisebox{-3ex}[0pt]{\whu@supervisor}\hfill{}} & 	\\[3ex] % \cline{2-2}
 
 \ifx\whu@second@supervisor\@empty\else
@@ -254,16 +249,15 @@ xetex]{geometry}    % 页面设置%
 
 \else
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 生\hfill 姓\hfill 名: }} & {\songti {}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex]
-	  \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 号: }} & {\songti {}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex]
 \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{指\hfill 导\hfill 教\hfill 师\hfill 姓\hfill 名、\hfill 职\hfill 称: }} & {\songti	{}\raisebox{-3ex}[0pt]{}\hfill{}} & \\[3ex] % \cline{2-2}
 \fi
-      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{专\hfill 业\hfill 名\hfill 称: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@major}\hfill{}} &
+      \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{学\hfill 科、\hfill 专\hfill 业\hfill 名\hfill 称: }} & {\songti {}\raisebox{-3ex}[0pt]{\whu@major}\hfill{}} &
       \\[3ex]
       \raisebox{-3ex}[0pt]{\makebox[4.8cm][s]{研\hfill 究\hfill 方\hfill 向: }} & {\songti{}\raisebox{-3ex}[0pt]{\whu@speciality}\hfill{}} & \\[3ex]
      \end{tabular}
     }
     \par
-    \vspace{20mm}
+    \vspace{25mm}
     {
 %    {\heiti \zihao{3} \the\year~年 ~\the\month~月 ~\the\day~日 \par}%
     {\heiti \zihao{3} \whu@date \par}%
@@ -285,7 +279,7 @@ xetex]{geometry}    % 页面设置%
   \vspace*{1.5cm}
   
   \begin{center}{
-  \zihao{2}  Master Thesis of Wuhan University \par}\end{center}
+  \zihao{2}  Ph.D. Dissertation of Wuhan University \par}\end{center}
   \vspace*{3cm}
   \begin{center}{ \zihao{2}
   \whu@title@en \par}\end{center}
@@ -331,7 +325,6 @@ xetex]{geometry}    % 页面设置%
   \zihao{4}
   \begin{tabular}{ r l }
    Candidate:      & {\sc \ifwhu@review@false  \whu@author@en \fi}      \\
-   Student Number: & {\ifwhu@review@false \whu@number@en \fi} \\
    \ifwhu@review@true Supervisor: & \\ \else 
 	Supervisor:     & {\sc \whu@supervisor@en}   \\
 	\ifx \whu@second@supervisor@en\@empty \else & {\sc \whu@second@supervisor@en} \fi \\ 
@@ -673,7 +666,7 @@ xetex]{geometry}    % 页面设置%
 }
 \NewDocumentCommand{\spine}{
 	O{
-		武汉大学硕士学位论文\qquad
+		武汉大学博士学位论文\qquad
 	}
 	O{
 		\whu@title\qquad\qquad
