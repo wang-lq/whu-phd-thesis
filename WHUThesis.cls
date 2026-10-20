@@ -170,6 +170,7 @@
  
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
+\setmainfont{Times New Roman} % 西文字体
 %------------------------ Page layout ----------------------------------
 \RequirePackage{fancyhdr,hyperref}
 \hypersetup{bookmarksnumbered=true,bookmarksopen=true,colorlinks=true,pdfencoding=auto,citecolor=[rgb]{0.796,0.0196,0.0196},
@@ -431,12 +432,20 @@ xetex]{geometry}    % 页面设置%
 \RequirePackage{float}
 \RequirePackage{graphbox}
 \RequirePackage{textcomp,gensymb} %支持°
+% gensymb和newtxmath按西文字体声明TS1/OT1数学字体, Times New Roman(TU编码)没有这两种编码,
+% 改用newtx自带的Times字形(ntxtlf), 否则数学里的°、数字和sin等会回退到Latin Modern
+\AtBeginDocument{%
+	\DeclareSymbolFont{gns@font}{TS1}{ntxtlf}{m}{n}%
+	\SetSymbolFont{gns@font}{bold}{TS1}{ntxtlf}{b}{n}}
+\let\whu@rmdefault\rmdefault
 \RequirePackage[backend=biber,style=\whu@refstyle@file,gbpub=false,isbn=false,doi=true,gbtitlelink=true,url=true,sortlocale=zh__pinyin]{biblatex}  % 参考文献引用, 使用biblatex包
 \RequirePackage[ruled,linesnumbered]{algorithm2e} %伪代码
 %\RequirePackage{setspace}
 \RequirePackage{url}
 \RequirePackage{enumitem}
+\renewcommand\rmdefault{ntxtlf}
 \RequirePackage{newtxmath}
+\let\rmdefault\whu@rmdefault
 \RequirePackage{emptypage}%空白页无页码
 \RequirePackage{verbatim} %多行注释，用\begin{comment} ... \end{comment} 包含被注释的文字
 %%----------------------- Theorems -----------------------------------
