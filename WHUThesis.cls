@@ -548,7 +548,8 @@ xetex]{geometry}    % 页面设置%
 
 %%% ---- 章节标题设置 ----- %%%%
 \ctexset{chapter={nameformat={\zihao{-2}\bfseries\raggedright},titleformat={\zihao{-2}\bfseries\centering},%
-                number={\chinese{chapter}},name={第,章},afterskip={30pt},beforeskip={20pt}}}
+                number={\chinese{chapter}},name={第,章},afterskip={38pt},beforeskip={20pt},%
+                fixskip=true}} % fixskip去掉ctex在页首额外加的间距, 使标题上下间距(约39pt)一致
 \ctexset{section={format+={\zihao{3}\raggedright}}}
 \ctexset{subsection={format+={\zihao{4}\raggedright}}}
 \ctexset{subsubsection={format={\zihao{-4}\kaishu\raggedright}}}
