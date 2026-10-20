@@ -367,9 +367,9 @@ xetex]{geometry}    % 页面设置%
 %------------------------ Abstract & Keywords -------------------------
 \newcommand\cnabstractname{摘要}
 \newcommand\enabstractname{ABSTRACT}
-\newcommand\cnkeywords[1]{ {\heiti\zihao{-4}\cnkeywordsname: }#1}
+\newcommand\cnkeywords[1]{ {\heiti\zihao{-4}\cnkeywordsname：#1}}
 \newcommand\cnkeywordsname{关键词}
-\newcommand\enkeywords[1]{ {\bfseries\zihao{-4}\enkeywordsname: }#1}
+\newcommand\enkeywords[1]{ {\bfseries\zihao{-4}\enkeywordsname: #1}}
 \newcommand\enkeywordsname{Key words}
 
 \newenvironment{cnabstract}{
